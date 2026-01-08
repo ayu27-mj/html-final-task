@@ -71,12 +71,24 @@
             min-width: 676px;
         }
 
+        #myTab .nav-link {
+            border: 1px solid;
+            background-color: #ffffff;
+            color:black;
+        }
+
+        .margin{
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
         @media (max-width: 767px) {
 
             /* sm以下 */
             #myTab .nav-link {
                 font-size: 0.75rem;
                 white-space: nowrap;
+                
             }
         }
 
@@ -186,7 +198,7 @@
 
         <!-- タブナビゲーション -->
         <ul class="nav nav-pills nav-fill mb-4" id="myTab" role="tablist">
-            <li class="nav-item" role="presentation">
+            <li class="nav-item margin" role="presentation">
                 <button class="nav-link active" id="watching-tab" data-bs-toggle="pill" data-bs-target="#watching"
                     type="button" role="tab">
                     <i class="bi bi-play-circle"></i>
@@ -194,7 +206,7 @@
                     <span class="d-inline d-sm-none">視聴中</span>
                 </button>
             </li>
-            <li class="nav-item" role="presentation">
+            <li class="nav-item margin" role="presentation">
                 <button class="nav-link" id="completed-tab" data-bs-toggle="pill" data-bs-target="#completed"
                     type="button" role="tab">
                     <i class="bi bi-check-circle"></i>
@@ -202,7 +214,7 @@
                     <span class="d-inline d-sm-none">済</span>
                 </button>
             </li>
-            <li class="nav-item" role="presentation">
+            <li class="nav-item margin" role="presentation">
                 <button class="nav-link" id="plantowatch-tab" data-bs-toggle="pill" data-bs-target="#plantowatch"
                     type="button" role="tab">
                     <i class="bi bi-clock"></i>
@@ -210,7 +222,7 @@
                     <span class="d-inline d-sm-none">予定</span>
                 </button>
             </li>
-            <li class="nav-item" role="presentation">
+            <li class="nav-item margin" role="presentation">
                 <button class="nav-link" id="dropped-tab" data-bs-toggle="pill" data-bs-target="#dropped" type="button"
                     role="tab">
                     <i class="bi bi-x-circle"></i>
