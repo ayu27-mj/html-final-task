@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>仮面ライダーガヴ - HeroLab</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="base.css">
+    <link rel="icon" href="favicon.ico">
+    <style>
+        .hero-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .rating-stars {
+            color: #fbbf24;
+        }
+
+        .rating-large {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .character-card {
+            transition: transform 0.3s ease;
+
+        }
+
+        .character-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .character-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .accordion-button:not(.collapsed)::after {
+            filter: invert(1) brightness(1.3) contrast(1.3);
+        }
+
+        .accordion-button::after {
+            filter: invert(0);
+        }
+
+
+        .stat-card {
+            background: linear-gradient(135deg, #4c1d95 0%, #312e81 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 20px;
+        }
+
+        .action-btn {
+            transition: transform 0.2s ease;
+        }
+
+        .action-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .carousel-item img {
+            height: 400px;
+            object-fit: cover;
+            object-position: 50% 15%;
+            border-radius: 10px;
+        }
+
+        .float-link {
+            display: inline-block;
+            transition: transform .2s, box-shadow .2s;
+        }
+
+        .float-link:hover {
+            transform: translateY(-2px);
+        }
+
+        iframe{
+            margin-left: 75px;
+            width: 75%;
+            
+        }
+
+         @media (max-width: 767.98px){
+            iframe{
+                margin: 0 auto;
+                width: 100%;
+                
+            }
+
+         }
+    </style>
+</head>
+
+<body>
+    <!-- ナビゲーションバー -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-film"></i> HeroLab
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">ホーム</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="hero-list.html">作品一覧</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="hero-ranking.html">ランキング</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="hero-mylist.html">マイリスト</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="hero-community.html">コミュニティ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-lg-none" href="hero-login.html">ログイン</a>
+                    </li>
+                </ul>
+                <a href="hero-login.html" class="btn btn-light ms-3 d-none d-lg-block">
+                    <i class="bi bi-person-circle"></i> ログイン</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <!-- パンくずリスト -->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">ホーム</a></li>
+                <li class="breadcrumb-item"><a href="hero-list.html">作品一覧</a></li>
+                <li class="breadcrumb-item active" aria-current="page">仮面ライダーガヴ</li>
+            </ol>
+        </nav>
+
+        <!-- 作品メイン情報 -->
+        <div class="row mb-5">
+            <div class="col-lg-8">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/EOvg9Eg60fY?si=nG9dNIeOQB5MwF7d" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <!-- タイトルと基本情報 -->
+                <div class="mb-4">
+                    <div class="d-flex gap-2 mb-3">
+                        <span class="badge bg-primary fs-6">仮面ライダー</span>
+                        <span class="badge bg-warning text-dark fs-6">令和</span>
+                        <span class="badge bg-success fs-6">ダーク</span>
+                        <span class="badge bg-danger fs-6">人気</span>
+                    </div>
+                    <h1 class="display-4 fw-bold mb-3">仮面ライダーガヴ</h1>
+                    <p class="lead text-muted">Kamen Rider Gavv</p>
+                </div>
+
+                <!-- あらすじ -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h3 class="card-title fw-bold mb-3"><i class="bi bi-book"></i> あらすじ</h3>
+                        <p class="card-text">
+                            異世界のモンスター、グラニュート。
+                        </p>
+                        <p class="card-text">
+                            人間たちは知らない。奴らが密かに人間界にやって来ていることを。
+                        </p>
+                        <p class="card-text">
+                            人間たちは知らない。奴らが人間を襲い、攫っていることを。
+                        </p>
+                        <p class="card-text">
+                            人間を守るため、一人の青年が立ち上がる！
+                        </p>
+                        <p class="card-text">
+                            食べる事が大好きな青年・ショウマはお菓子を食べることで眷属となる存在「ゴチゾウ」を生み出し、仮面ライダーへと変身する力を手に入れる。
+                        </p>
+                        <p class="card-text">
+                            グラニュートから人々の幸せを守るために戦うショウマの物語が今始まる！
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 作品情報アコーディオン -->
+                <div class="accordion mb-4" id="animeInfoAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#staffInfo">
+                                <i class="bi bi-people-fill me-2"></i> スタッフ情報
+                            </button>
+                        </h2>
+                        <div id="staffInfo" class="accordion-collapse collapse show"
+                            data-bs-parent="#animeInfoAccordion">
+                            <div class="accordion-body">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <strong>脚本:</strong> 香村純子
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <strong>監督:</strong> 杉原輝昭
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <strong>音楽:</strong> 坂部剛
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <strong>制作:</strong> 東映
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#broadcastInfo">
+                                <i class="bi bi-tv me-2"></i> 放送情報
+                            </button>
+                        </h2>
+                        <div id="broadcastInfo" class="accordion-collapse collapse"
+                            data-bs-parent="#animeInfoAccordion">
+                            <div class="accordion-body">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <strong>放送時期:</strong> 2024年秋
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <strong>話数:</strong> 全50話
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <strong>放送局:</strong> テレビ朝日系列
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <strong>放送日時:</strong> 毎週日曜 9:00〜
+                                    </div>
+                                    <div class="col-md-12 mb-3">
+                                        <strong>配信:</strong> TTFC、Amazon Prime Video、DMM TV、U-NEXT、Hulu、Abema
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#musicInfo">
+                                <i class="bi bi-music-note-beamed me-2"></i> 主題歌・音楽
+                            </button>
+                        </h2>
+                        <div id="musicInfo" class="accordion-collapse collapse" data-bs-parent="#animeInfoAccordion">
+                            <div class="accordion-body">
+                                <div class="mb-3">
+                                    <strong>オープニングテーマ:</strong><br>
+                                    「Got Boost?」 / FANTASTICS from EXILE TRIBE
+                                </div>
+                                <div class="mb-3">
+                                    <strong>挿入歌:</strong><br>
+                                    「Shake it off」 / FANTASTICS from EXILE TRIBE
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- サイドバー -->
+            <div class="col-lg-4">
+                <!-- 評価カード -->
+                <div class="stat-card mb-4">
+                    <div class="text-center">
+                        <div class="rating-large mb-2">4.8</div>
+                        <div class="rating-stars fs-3 mb-3">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                        </div>
+                        <p class="mb-0"><a href="hero-review.html"
+                                class="link-light link-underline link-underline-opacity-0 link-underline-opacity-100-hover float-link">7,644件のレビュー</a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- アクションボタン -->
+                <div class="d-grid gap-2 mb-4">
+                    <button class="btn btn-primary btn-lg action-btn">
+                        <i class="bi bi-star"></i> マイリストに追加
+                    </button>
+                    <button class="btn btn-outline-primary btn-lg action-btn">
+                        <i class="bi bi-pencil-square"></i> レビューを書く
+                    </button>
+                    <button class="btn btn-outline-secondary btn-lg action-btn">
+                        <i class="bi bi-share"></i> シェアする
+                    </button>
+                </div>
+
+                <!-- 統計情報 -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold mb-3"><i class="bi bi-bar-chart-fill"></i> 統計情報</h5>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>視聴中</span>
+                                <strong>8,234人</strong>
+                            </div>
+                            <div class="progress" style="height: 10px;">
+                                <div class="progress-bar bg-success" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>視聴済み</span>
+                                <strong>2,456人</strong>
+                            </div>
+                            <div class="progress" style="height: 10px;">
+                                <div class="progress-bar bg-primary" style="width: 40%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>視聴予定</span>
+                                <strong>15,678人</strong>
+                            </div>
+                            <div class="progress" style="height: 10px;">
+                                <div class="progress-bar bg-warning" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- タグ -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold mb-3"><i class="bi bi-tags-fill"></i> タグ</h5>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="badge bg-info">#仮面ライダー</span>
+                            <span class="badge bg-info">#令和ライダー</span>
+                            <span class="badge bg-info">#ダーク</span>
+                            <span class="badge bg-info">#お菓子モチーフ</span>
+                            <span class="badge bg-info">#復讐</span>
+                            <span class="badge bg-info">#成長</span>
+                            <span class="badge bg-info">#仲間</span>
+                            <span class="badge bg-info">#アクション</span>
+                            <span class="badge bg-info">#感動</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 関連リンク -->
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold mb-3"><i class="bi bi-link-45deg"></i> 関連リンク</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <a href="https://www.tv-asahi.co.jp/gavv/" class="text-decoration-none">
+                                    <i class="bi bi-globe"></i> 公式サイト
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="https://x.com/GavvToei" class="text-decoration-none">
+                                    <i class="bi bi-twitter-x"></i> 公式X
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- キャラクター紹介 -->
+        <section class="mb-5">
+            <h2 class="fw-bold mb-4"><i class="bi bi-people-fill"></i> キャラクター</h2>
+
+            <div class="accordion" id="characterAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#mainCharacters">
+                            メインキャラクター
+                        </button>
+                    </h2>
+                    <div id="mainCharacters" class="accordion-collapse collapse show"
+                        data-bs-parent="#characterAccordion">
+                        <div class="accordion-body">
+                            <div class="row g-4">
+                                <div class="col-md-3">
+                                    <div class="card character-card h-100">
+                                        <img src="images/umasyo.webp" class="card-img-top character-img" alt="佐藤翔太">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">ショウマ/仮面ライダーガヴ</h5>
+                                            <p class="text-muted small mb-2">演：知念英和</p>
+                                            <p class="card-text small">仮面ライダーガヴに変身する、異世界からやってきた青年。人一倍の食いしん坊で、なかでもお菓子が大好き。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card character-card h-100">
+                                        <img src="images/hanteli.webp" class="card-img-top character-img" alt="エリナ">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">辛木田絆斗 / 仮面ライダーヴァレン</h5>
+                                            <p class="text-muted small mb-2">演: 日野友輔</p>
+                                            <p class="card-text small">フリーライターとしての活動の傍ら、グラニュートの情報を追う青年。危険な現場にも平気で飛び込んでいく向こう見ずなタイプ。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card character-card h-100">
+                                        <img src="images/sachika3.webp" class="card-img-top character-img" alt="リュウ">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">甘根幸果</h5>
+                                            <p class="text-muted small mb-2">演: 宮部のぞみ</p>
+                                            <p class="card-text small">ショウマを拾う、何でも屋『はぴぱれ』の社長。みんなの幸せを願う明るくポジティブなギャル。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card character-card h-100">
+                                        <img src="images/rakian.webp" class="card-img-top character-img" alt="ルナ">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">ラキア・アマルガ／仮面ライダーヴラム</h5>
+                                            <p class="text-muted small mb-2">演: 庄司浩平</p>
+                                            <p class="card-text small">二エルブに改造されコードネーム・ラーゲ9として人間を襲い、ガヴ、ヴァレンと戦っていたグラニュート。しかし、真の目的はストマック家に近づき、弟の命を奪った犯人に復讐するため。同じくストマック家と戦うショウマに説得され、ともに戦う道を選ぶ。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#subCharacters">
+                            サブキャラクター
+                        </button>
+                    </h2>
+                    <div id="subCharacters" class="accordion-collapse collapse" data-bs-parent="#characterAccordion">
+                        <div class="accordion-body">
+                            <div class="row g-4">
+                                <div class="col-md-3">
+                                    <div class="card character-card h-100">
+                                        <img src="images/suga.webp" class="card-img-top character-img" alt="アルフレッド王">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">酸賀研造／仮面ライダーベイク</h5>
+                                            <p class="text-muted small mb-2">演: 浅沼晋太郎</p>
+                                            <p class="card-text small">グラニュート研究家。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card character-card h-100">
+                                        <img src="images/nierubu.webp" class="card-img-top character-img" alt="魔王">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">ニエルブ・ストマック</h5>
+                                            <p class="text-muted small mb-2">演: 滝澤諒</p>
+                                            <p class="card-text small">技術開発を担う、ストマック家・次男。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card character-card h-100">
+                                        <img src="images/rango.webp" class="card-img-top character-img" alt="賢者">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">ランゴ・ストマック</h5>
+                                            <p class="text-muted small mb-2">演: 塚本高史</p>
+                                            <p class="card-text small">ストマック家・長男。ストマック社の現社長。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card character-card h-100">
+                                        <img src="images/bokka.webp" class="card-img-top character-img" alt="商人">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">ボッカ・ジャルダック</h5>
+                                            <p class="text-muted small mb-2">CV: 安元洋貴</p>
+                                            <p class="card-text small">グラニュート界の大統領にしてリゼルの父親。娘が嫁いだストマック家で圧倒的な権力を見せつける。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- フッター -->
+    <footer class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5 class="fw-bold mb-3"><i class="bi bi-film"></i> HeroLab</h5>
+                    <p class="text-light">あなたの好きなヒーローを見つけて、共有しよう。</p>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <h6 class="fw-bold mb-3">サイト情報</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">About</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">利用規約</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">プライバシー</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <h6 class="fw-bold mb-3">サポート</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">ヘルプ</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">お問い合わせ</a></li>
+                        <li><a href="faq.html" class="text-light text-decoration-none">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h6 class="fw-bold mb-3">フォローする</h6>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-light"><i class="bi bi-twitter fs-4"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-instagram fs-4"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-youtube fs-4"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-discord fs-4"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-light">
+            <p class="text-center text-light mb-0">&copy; 2025 HeroLab. All rights reserved.</p>
+        </div>
+    </footer>
+    <button id="backToTopBtn" class="btn shadow d-flex align-items-center justify-content-center">
+        <i class="bi bi-chevron-up"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="common.js"></script>
+</body>
+
+</html>
