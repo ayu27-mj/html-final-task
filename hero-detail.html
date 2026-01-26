@@ -387,115 +387,104 @@
         </div>
 
         <!-- キャラクター紹介 -->
-        <section class="mb-5">
+         <section class="mb-5">
             <h2 class="fw-bold mb-4"><i class="bi bi-people-fill"></i> キャラクター</h2>
-
-            <div class="accordion" id="characterAccordion">
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#mainCharacters">
-                            メインキャラクター
-                        </button>
-                    </h2>
-                    <div id="mainCharacters" class="accordion-collapse collapse show"
-                        data-bs-parent="#characterAccordion">
-                        <div class="accordion-body">
-                            <div class="row g-4">
-                                <div class="col-md-3">
-                                    <div class="card character-card h-100">
-                                        <img src="images/umasyo.webp" class="card-img-top character-img" alt="佐藤翔太">
-                                        <div class="card-body">
-                                            <h5 class="card-title fw-bold">ショウマ/仮面ライダーガヴ</h5>
-                                            <p class="text-muted small mb-2">演：知念英和</p>
-                                            <p class="card-text small">仮面ライダーガヴに変身する、異世界からやってきた青年。人一倍の食いしん坊で、なかでもお菓子が大好き。</p>
-                                        </div>
-                                    </div>
+            <ul class="nav nav-tabs mb-4" id="characterTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="main-tab" data-bs-toggle="tab" data-bs-target="#mainCharacters" type="button" role="tab">
+                        メインキャラクター
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="sub-tab" data-bs-toggle="tab" data-bs-target="#subCharacters" type="button" role="tab">
+                        サブキャラクター
+                    </button>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="mainCharacters" role="tabpanel">
+                    <div class="row g-4">
+                        <div class="col-md-3">
+                            <div class="card character-card h-100">
+                                <img src="images/umasyo.webp" class="card-img-top character-img" alt="佐藤翔太">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">ショウマ/仮面ライダーガヴ</h5>
+                                    <p class="text-muted small mb-2">演：知念英和</p>
+                                    <p class="card-text small">仮面ライダーガヴに変身する、異世界からやってきた青年。人一倍の食いしん坊で、なかでもお菓子が大好き。</p>
                                 </div>
-                                <div class="col-md-3">
-                                    <div class="card character-card h-100">
-                                        <img src="images/hanteli.webp" class="card-img-top character-img" alt="エリナ">
-                                        <div class="card-body">
-                                            <h5 class="card-title fw-bold">辛木田絆斗 / 仮面ライダーヴァレン</h5>
-                                            <p class="text-muted small mb-2">演: 日野友輔</p>
-                                            <p class="card-text small">フリーライターとしての活動の傍ら、グラニュートの情報を追う青年。危険な現場にも平気で飛び込んでいく向こう見ずなタイプ。</p>
-                                        </div>
-                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card character-card h-100">
+                                <img src="images/hanteli.webp" class="card-img-top character-img" alt="エリナ">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">辛木田絆斗 / 仮面ライダーヴァレン</h5>
+                                    <p class="text-muted small mb-2">演: 日野友輔</p>
+                                    <p class="card-text small">フリーライターとしての活動の傍ら、グラニュートの情報を追う青年。危険な現場にも平気で飛び込んでいく向こう見ずなタイプ。</p>
                                 </div>
-                                <div class="col-md-3">
-                                    <div class="card character-card h-100">
-                                        <img src="images/sachika3.webp" class="card-img-top character-img" alt="リュウ">
-                                        <div class="card-body">
-                                            <h5 class="card-title fw-bold">甘根幸果</h5>
-                                            <p class="text-muted small mb-2">演: 宮部のぞみ</p>
-                                            <p class="card-text small">ショウマを拾う、何でも屋『はぴぱれ』の社長。みんなの幸せを願う明るくポジティブなギャル。</p>
-                                        </div>
-                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card character-card h-100">
+                                <img src="images/sachika3.webp" class="card-img-top character-img" alt="リュウ">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">甘根幸果</h5>
+                                    <p class="text-muted small mb-2">演: 宮部のぞみ</p>
+                                    <p class="card-text small">ショウマを拾う、何でも屋『はぴぱれ』の社長。みんなの幸せを願う明るくポジティブなギャル。</p>
                                 </div>
-                                <div class="col-md-3">
-                                    <div class="card character-card h-100">
-                                        <img src="images/rakian.webp" class="card-img-top character-img" alt="ルナ">
-                                        <div class="card-body">
-                                            <h5 class="card-title fw-bold">ラキア・アマルガ／仮面ライダーヴラム</h5>
-                                            <p class="text-muted small mb-2">演: 庄司浩平</p>
-                                            <p class="card-text small">二エルブに改造されコードネーム・ラーゲ9として人間を襲い、ガヴ、ヴァレンと戦っていたグラニュート。しかし、真の目的はストマック家に近づき、弟の命を奪った犯人に復讐するため。同じくストマック家と戦うショウマに説得され、ともに戦う道を選ぶ。</p>
-                                        </div>
-                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card character-card h-100">
+                                <img src="images/rakian.webp" class="card-img-top character-img" alt="ルナ">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">ラキア・アマルガ／仮面ライダーヴラム</h5>
+                                    <p class="text-muted small mb-2">演: 庄司浩平</p>
+                                    <p class="card-text small">二エルブに改造されコードネーム・ラーゲ9として人間を襲い、ガヴ、ヴァレンと戦っていたグラニュート。しかし、真の目的はストマック家に近づき、弟の命を奪った犯人に復讐するため。同じくストマック家と戦うショウマに説得され、ともに戦う道を選ぶ。</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#subCharacters">
-                            サブキャラクター
-                        </button>
-                    </h2>
-                    <div id="subCharacters" class="accordion-collapse collapse" data-bs-parent="#characterAccordion">
-                        <div class="accordion-body">
-                            <div class="row g-4">
-                                <div class="col-md-3">
-                                    <div class="card character-card h-100">
-                                        <img src="images/suga.webp" class="card-img-top character-img" alt="アルフレッド王">
-                                        <div class="card-body">
-                                            <h5 class="card-title fw-bold">酸賀研造／仮面ライダーベイク</h5>
-                                            <p class="text-muted small mb-2">演: 浅沼晋太郎</p>
-                                            <p class="card-text small">グラニュート研究家。</p>
-                                        </div>
-                                    </div>
+                <div class="tab-pane fade" id="subCharacters" role="tabpanel">
+                    <div class="row g-4">
+                        <div class="col-md-3">
+                            <div class="card character-card h-100">
+                                <img src="images/suga.webp" class="card-img-top character-img" alt="アルフレッド王">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">酸賀研造／仮面ライダーベイク</h5>
+                                    <p class="text-muted small mb-2">演: 浅沼晋太郎</p>
+                                    <p class="card-text small">グラニュート研究家。</p>
                                 </div>
-                                <div class="col-md-3">
-                                    <div class="card character-card h-100">
-                                        <img src="images/nierubu.webp" class="card-img-top character-img" alt="魔王">
-                                        <div class="card-body">
-                                            <h5 class="card-title fw-bold">ニエルブ・ストマック</h5>
-                                            <p class="text-muted small mb-2">演: 滝澤諒</p>
-                                            <p class="card-text small">技術開発を担う、ストマック家・次男。</p>
-                                        </div>
-                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card character-card h-100">
+                                <img src="images/nierubu.webp" class="card-img-top character-img" alt="魔王">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">ニエルブ・ストマック</h5>
+                                    <p class="text-muted small mb-2">演: 滝澤諒</p>
+                                    <p class="card-text small">技術開発を担う、ストマック家・次男。</p>
                                 </div>
-                                <div class="col-md-3">
-                                    <div class="card character-card h-100">
-                                        <img src="images/rango.webp" class="card-img-top character-img" alt="賢者">
-                                        <div class="card-body">
-                                            <h5 class="card-title fw-bold">ランゴ・ストマック</h5>
-                                            <p class="text-muted small mb-2">演: 塚本高史</p>
-                                            <p class="card-text small">ストマック家・長男。ストマック社の現社長。</p>
-                                        </div>
-                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card character-card h-100">
+                                <img src="images/rango.webp" class="card-img-top character-img" alt="賢者">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">ランゴ・ストマック</h5>
+                                    <p class="text-muted small mb-2">演: 塚本高史</p>
+                                    <p class="card-text small">ストマック家・長男。ストマック社の現社長。</p>
                                 </div>
-                                <div class="col-md-3">
-                                    <div class="card character-card h-100">
-                                        <img src="images/bokka.webp" class="card-img-top character-img" alt="商人">
-                                        <div class="card-body">
-                                            <h5 class="card-title fw-bold">ボッカ・ジャルダック</h5>
-                                            <p class="text-muted small mb-2">CV: 安元洋貴</p>
-                                            <p class="card-text small">グラニュート界の大統領にしてリゼルの父親。娘が嫁いだストマック家で圧倒的な権力を見せつける。</p>
-                                        </div>
-                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card character-card h-100">
+                                <img src="images/bokka.webp" class="card-img-top character-img" alt="商人">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">ボッカ・ジャルダック</h5>
+                                    <p class="text-muted small mb-2">CV: 安元洋貴</p>
+                                    <p class="card-text small">グラニュート界の大統領にしてリゼルの父親。娘が嫁いだストマック家で圧倒的な権力を見せつける。</p>
                                 </div>
                             </div>
                         </div>
